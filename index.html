@@ -175,12 +175,12 @@
         </p>
         <!-- Greenline Paribahan -->
         <div class="bg-white md:flex items-center rounded-3xl mt-12">
-          <div class="w-3/4  ">
+          <div class="w-3/4">
             <div>
               <div class="md:flex justify-between">
-                <div class="md:flex gap-4">
+                <div class="md:flex m-4 gap-4">
                   <img src="./images/bus-logo.png" alt="" />
-                  <div>
+                  <div class="">
                     <h1 class="text-2xl font-extrabold">Greenline Paribahan</h1>
                     <p class="text-gray-400">Coach-009-WEB ! AC_Business</p>
                   </div>
@@ -192,12 +192,12 @@
                   <span>40 Seats left </span>
                 </div>
               </div>
-              <div class="bg-gray-100 p-8 rounded-2xl mt-12">
+              <div class="bg-gray-100 p-8 m-8 rounded-2xl mt-12">
                 <div class="flex justify-between my-3">
                   <p>Route</p>
                   <p>Dhaka - Sylhet</p>
                 </div>
-                <hr class="border border-gray-200 border-dashed    " />
+                <hr class="border border-gray-200 border-dashed" />
                 <div class="flex justify-between my-3">
                   <p>Departure Time</p>
                   <p>9:00 PM</p>
@@ -225,16 +225,97 @@
           </div>
         </div>
 
-<div class="flex gap-4 items-start ">
+        <!-- seat area start -->
+        <section class="md:flex gap-4 bg-white mt-12 rounded-2xl p-4">
+          <!-- ticket area start -->
+          <div class="md:w-3/5">
+            <h1 class="my-4 pl-4">Select Your Seat</h1>
+            <hr class="border border-dashed bg-gray-500" />
 
-           </div>
-         
+            <div class="flex justify-between items-center my-4 px-4">
+              <div class="flex items-center gap-3">
+                <img src="./images/seat-gray.png" alt="" />
+                <h1>Available</h1>
+              </div>
+              <div class="flex items-center gap-3">
+                <img src="./images/seat-green-filled.png" alt="" />
+                <h1>Selected</h1>
+              </div>
+            </div>
 
-        <div class=" mt-12">
-          <h1 class="text-2xl font-semibold mb-4">Select Your Seat</h1>
-        </div>
-</div>
-        </div>
+            <hr class="border border-dashed bg-gray-500" />
+          </div>
+          <!-- ticket area end -->
+
+          <!-- from area start -->
+          <div class="mt-10 md:mt-0 md:w-2/5">
+            <h1 class="my-4 pl-4">Select Your Seat</h1>
+            <hr class="border border-dashed bg-gray-500" />
+
+            <!-- details -->
+            <div class="bg-white p-4">
+              <div class="overflow-x-auto bg-gray-100 rounded-2xl">
+                <table class="table">
+                  <!-- head -->
+                  <thead class="">
+                    <tr>
+                      <th class="text-xl">Seat <sub>2</sub></th>
+                      <th class="text-xl">Class</th>
+                      <th class="text-xl">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- row 1 -->
+                    <tr>
+                      <td>Cy Ganderton</td>
+                      <td>Quality Control Specialist</td>
+                      <td>Blue</td>
+                    </tr>
+                    <!-- row 2 -->
+                    <tr class="hover">
+                      <td>Hart Hagerty</td>
+                      <td>Desktop Support Technician</td>
+                      <td>Purple</td>
+                    </tr>
+                    <!-- row 3 -->
+                    <tr>
+                      <td>Brice Swyre</td>
+                      <td>Tax Accountant</td>
+                      <td>Red</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- price area -->
+                <div
+                  class="flex justify-between items-center p-4 font-bold text-xl"
+                >
+                  <h2>Total Price</h2>
+                  <h2>BDT <span class="text-2xl">1100</span></h2>
+                </div>
+
+                <!-- copuopon -->
+                <div class="p-2 m-4 bg-white flex justify-between rounded-2xl">
+                  <input
+                    class="pl-4 outline-none"
+                    type="text"
+                    placeholder="Have any copupon?"
+                  />
+                  <button class="btn bg-[#1DD100] px-10">Apply</button>
+                </div>
+                <!-- copuopon -->
+
+                <!-- grand total -->
+                <div
+                class="flex justify-between items-center px-4 pb-8 font-bold text-xl"
+              >
+                <h2>Grand Total</h2>
+                <h2>BDT <span class="text-2xl">1100</span></h2>
+              </div>
+              </div>
+            </div>
+          </div>
+          <!-- from area end -->
+        </section>
       </section>
     </main>
     <footer class="bg-black">
