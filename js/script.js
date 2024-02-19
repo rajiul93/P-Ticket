@@ -133,7 +133,10 @@ function successPopupMassage(){
 }
 
 function confirm (){
-  successPopup.classList.add('hidden')
+  selectedAllSeat.splice(1,3)
+  successPopup.classList.add('hidden');
+  // totalPriceLocation.innerText='0'
+  // grandTotalLocation.innerText="0"
   for(const seat of allSeat){
     seat.classList.remove('bg-green-500')
 
