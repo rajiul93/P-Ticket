@@ -122,6 +122,7 @@ function createElement(obj) {
   tr.appendChild(td1);
   tr.appendChild(td2);
   tr.appendChild(td3);
+  
 
   tBody.appendChild(tr);
 }
@@ -132,8 +133,8 @@ function successPopupMassage(){
   successPopup.classList.remove('hidden')
 }
 
-function confirm (){
-  selectedAllSeat.splice(1,3)
+function confirm (){ 
+  phone.value =""
   successPopup.classList.add('hidden');
   // totalPriceLocation.innerText='0'
   // grandTotalLocation.innerText="0"
