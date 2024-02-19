@@ -10,11 +10,15 @@ const couponContainer = document.getElementById("coupon-container");
 const grandTotalLocation = document.getElementById("grand-total");
 const submit = document.getElementById("submit");
 const phone = document.getElementById("phone");
+const successPopup = document.getElementById("success-popup");
+
+
+
 
 couponApply.addEventListener("click", function () {
   couponApply.setAttribute(("disabled", "true"));
 });
-
+// all seat select by class name.
 const allSeat = document.getElementsByClassName("seat-list");
 for (const seat of allSeat) {
   seat.addEventListener("click", function (e) {
@@ -42,9 +46,16 @@ for (const seat of allSeat) {
       alert("you already select 4 seat");
     }
     activeCoupon();
+    activeSubmitButton();
   });
 }
 
+// active final submit button
+function activeSubmitButton() {
+  if (phone.value.length != 0 && selectedAllSeat.length != 0) {
+    submit.removeAttribute("disabled");
+  } 
+}
 function totalMoney(allSeatPrice) {
   let sum = 0;
   for (const seat of allSeatPrice) {
@@ -61,24 +72,20 @@ function activeCoupon() {
 }
 
 function applyCoupon() {
-  console.log(getCoupon.value);
-
   if (getCoupon.value === "NEW15") {
-  couponContainer.classList.add("hidden");
+    couponContainer.classList.add("hidden");
 
     const offer = (getNumber(totalPriceLocation) * 15) / 100;
     const grandTotal = getNumber(totalPriceLocation) - offer;
     grandTotalLocation.innerText = grandTotal;
-  
-  }else if(getCoupon.value === "Couple20"){
-  couponContainer.classList.add("hidden");
+  } else if (getCoupon.value === "Couple20") {
+    couponContainer.classList.add("hidden");
 
     const offer = (getNumber(totalPriceLocation) * 20) / 100;
     const grandTotal = getNumber(totalPriceLocation) - offer;
     grandTotalLocation.innerText = grandTotal;
-  
-  }else{
-    alert("Should be valid coupon")
+  } else {
+    alert("Should be valid coupon");
   }
 }
 
@@ -86,21 +93,20 @@ function getNumber(id) {
   const number = parseInt(id.innerText);
   return number;
 }
-
-phone.addEventListener("keyup", function (e) { 
- const eValue = e.target.value;
- if (  !isNaN(eValue)) {
-  if (e.target.value.length != "" && selectedAllSeat.length != 0) {
-    submit.removeAttribute("disabled");
+// active final submit button
+phone.addEventListener("keyup", function (e) {
+  const eValue = e.target.value;
+  if (!isNaN(eValue)) {
+    if (e.target.value.length != "" && selectedAllSeat.length != 0) {
+      submit.removeAttribute("disabled");
+    } else {
+      submit.setAttribute("disabled", "true");
+    }
   } else {
-    submit.setAttribute("disabled", "true");
+    alert("Should be Mobile number");
   }
-} else {
-  alert("Should be Mobile number");
-}
- 
 });
- 
+
 function finalSubmit() {}
 
 function createElement(obj) {
@@ -120,4 +126,17 @@ function createElement(obj) {
   tBody.appendChild(tr);
 }
 
-console.log(isNaN("k"));
+
+
+function successPopupMassage(){
+  successPopup.classList.remove('hidden')
+}
+
+function confirm (){
+  successPopup.classList.add('hidden')
+  for(const seat of allSeat){
+    seat.classList.remove('bg-green-500')
+
+  }
+
+}
