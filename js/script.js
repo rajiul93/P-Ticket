@@ -24,6 +24,11 @@ for (const seat of allSeat) {
   seat.addEventListener("click", function (e) {
     const seatName = e.target.innerText;
     const selectedSeatLocation = e.target;
+    selectedSeatLocation.setAttribute("disabled","true")
+    // console.log(selectedSeatLocation.in);
+  // console.log(selectedSeatLocation.classList.contains('bg-green-500'));
+  
+
     const seatNumber = {
       location: selectedSeatLocation,
       price: 550,
@@ -31,11 +36,12 @@ for (const seat of allSeat) {
       buy: true,
     };
 
-    if (selectedAllSeat.length < 4) {
+    if (selectedAllSeat.length < 4   ) {
       createElement(seatNumber);
       totalSeat.innerText = getNumber(totalSeat) - 1;
       addedSeat.innerText = getNumber(addedSeat) + 1;
 
+     
       selectedAllSeat.push(seatNumber);
       totalMoney(selectedAllSeat);
 
@@ -78,7 +84,7 @@ function applyCoupon() {
     const offer = (getNumber(totalPriceLocation) * 15) / 100;
     const grandTotal = getNumber(totalPriceLocation) - offer;
     grandTotalLocation.innerText = grandTotal;
-  } else if (getCoupon.value === "Couple20") {
+  } else if (getCoupon.value === "Couple 20") {
     couponContainer.classList.add("hidden");
 
     const offer = (getNumber(totalPriceLocation) * 20) / 100;
@@ -122,7 +128,7 @@ function createElement(obj) {
   tr.appendChild(td1);
   tr.appendChild(td2);
   tr.appendChild(td3);
-  
+
 
   tBody.appendChild(tr);
 }
